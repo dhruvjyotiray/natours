@@ -5,7 +5,6 @@ const AppError = require("../utils/appError");
 const { promisify } = require("util");
 const Email = require("../utils/email");
 const crypto = require("crypto");
-const bcrypt = require("bcryptjs");
 
 const createSendToken = (user, statusCode, res) => {
   const token = signToken(user._id);
