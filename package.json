@@ -4,8 +4,8 @@
   "description": "Learning node, express and mongoDB",
   "main": "app.js",
   "engines": {
-    "node": "14.x",
-    "npm": "6.x"
+    "node": "19.x",
+    "npm": "9.x"
   },
   "scripts": {
     "start": "node server.js",
