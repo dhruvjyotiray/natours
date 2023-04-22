@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require("express");
+//Start express
 const app = express();
 const morgan = require("morgan");
 const AppError = require("./utils/appError");
