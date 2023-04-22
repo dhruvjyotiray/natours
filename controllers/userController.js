@@ -51,7 +51,7 @@ const filterObj = (body, ...allowedUpdates) => {
 
 exports.deleteMe = catchAsync(async (req, res) => {
   await User.findByIdAndUpdate(req.user._id, { active: false });
-  console.log(req.user);
+  // console.log(req.user);
 
   res.status(204).json({
     status: "success",
