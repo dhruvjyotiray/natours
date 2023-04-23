@@ -16,7 +16,8 @@ mongoose
 
 const port = process.env.PORT || 3000;
 
-if (process.env.NODE_ENV !== "production") {
+
+if (process.env.NODE_ENV === "production") {
   app.listen(port, () => {
     console.log(`App running on port ${port}...`);
   });
