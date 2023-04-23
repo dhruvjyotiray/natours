@@ -13,7 +13,7 @@ const logOutBtn = document.querySelector(".nav__el--logout");
 const userDataForm = document.querySelector(".form-user-data");
 const userPasswordForm = document.querySelector(".form-user-password");
 const bookBtn = document.getElementById("book-tour");
-const alertMessage = document.querySelector("body").dataset.data - alert;
+const alertMessage = document.querySelector("body").dataset.alert;
 
 //DELEGATION
 if (mapBox) {
