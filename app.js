@@ -13,7 +13,8 @@ const hpp = require("hpp");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const compression = require("compression");
-const cors = require('cors')
+const cors = require("cors");
+const { webhookCheckout } = require("./controllers/bookingController");
 
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
@@ -21,10 +22,10 @@ app.set("views", path.join(__dirname, "views"));
 //GLOBAL MIDDLEWARES
 
 //Implement CORS
-app.use(cors())
+app.use(cors());
 //Access-Control-Allow-Origin *
 
-app.options('*', cors())
+app.options("*", cors());
 // app.options('/api/v1/tours/:id', cors())
 
 //Serving static files
@@ -46,6 +47,12 @@ const limiter = rateLimit({
 });
 
 app.use("/api", limiter);
+
+app.post(
+  "/webhook-checkout",
+  express.raw({ type: "application/json" }),
+  webhookCheckout
+);
 
 const tourRouter = require("./routes/tourRoutes");
 const userRouter = require("./routes/userRoutes");
