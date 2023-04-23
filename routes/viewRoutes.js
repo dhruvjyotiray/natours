@@ -8,9 +8,12 @@ const {
   getLoginForm,
   getAccount,
   updateUserData,
-  getMyTours
+  getMyTours,
+  alerts
 } = require("../controllers/viewsController");
-const { createBookingCheckout } = require("../controllers/bookingController");
+// const { createBookingCheckout } = require("../controllers/bookingController");
+
+router.use(alerts)
 
 router.get("/", isLoggedIn, getOverview);
 router.get("/tour/:slug", isLoggedIn, getTour);

@@ -1,13 +1,13 @@
 export const hideAlert = () => {
-  const el = document.querySelector('.alert')
-  if (el) el.parentElement.removeChild(el)
-}
+  const el = document.querySelector(".alert");
+  if (el) el.parentElement.removeChild(el);
+};
 
 //type is either 'success' or 'error'
-export const showAlert = (type, message) => {
+export const showAlert = (type, message, time = 3000) => {
   hideAlert();
   const markup = `<div class="alert alert--${type}">${message}</div>`;
-  document.querySelector('body').insertAdjacentHTML('afterbegin', markup);
+  document.querySelector("body").insertAdjacentHTML("afterbegin", markup);
 
-  window.setTimeout(hideAlert, 3000);
+  window.setTimeout(hideAlert, time);
 };
